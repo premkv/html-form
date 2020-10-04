@@ -1,0 +1,90 @@
+<% include includes/html-head.html %>
+    <div class="main_container" role="main">
+        <% include includes/header-index.html %>
+        <% include includes/app-details/subnav.html %>
+        <% include includes/app-details/masthead.html %>
+        <div class="sunnav_trigger"></div>
+        <% include includes/app-details/section-one.html %>
+        <% include includes/app-details/section-two.html %>
+        <% include includes/app-details/section-three.html %>
+        <% include includes/app-details/section-four.html %>
+        <% include includes/app-details/section-five.html %>
+        <% include includes/app-details/section-six.html %>
+        <% include includes/jiohome/smart-app.html %>
+        <div class="gray-bg">
+          <% include includes/jiomart/testimonial.html %> 
+        </div>
+      
+        <% include includes/jiomart/faq.html %> 
+        <% include includes/footer.html %>
+    </div>
+<% include includes/html-footer.html %>
+
+
+
+<script src="assets/js/subnav.js"></script>
+
+<script>
+      $(document).ready(function () {
+
+        $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      var objectSelect = $(".sunnav_trigger");
+      var objectPosition = objectSelect.offset().top - 70;
+      if (scroll > objectPosition) {
+        $(".subnav_animate").addClass("sticky");
+      } else {
+        $(".subnav_animate").removeClass("sticky");
+      }
+    });
+
+        $(".testimonial_slide").slick({
+      dots: false,
+      speed: 300,
+      arrows: true,
+      centerMode: true,
+      centerPadding: "0",
+      slidesToShow: 3,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+          },
+        },
+      ],
+    });
+
+    $('#app-feature-slider').slick({
+		dots: true,
+		speed: 300,
+		arrows: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		mobileFirst: true,
+		//autoplay:true,
+		responsive: [
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 991,
+				settings: "unslick"
+			}
+		]
+	});
+      });
+</script>
